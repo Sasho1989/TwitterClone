@@ -1,0 +1,32 @@
+<h1> Edit Tweet </h1>
+
+<% if @tweet.errors.any? %>
+<div id="error_explanation" >
+  <h2>
+    <%= pluralize(@tweet.errors.count, "error") %> prohibited this tweet form being posted:
+  </h2>
+
+  <ul>
+    <% @tweet.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+
+<%= form_with model: @tweet, local: true do |form| %>
+  <p>
+    <%= form.label :username %>
+    <%= form.text_field :username %>
+  </p>
+
+  <p>
+    <%= form.label :body %>
+    <%= form.text_area :body %>
+  </p>
+
+  <p>
+    <%= form.submit "Edit Tweet" %>
+  </p>
+<% end %>
