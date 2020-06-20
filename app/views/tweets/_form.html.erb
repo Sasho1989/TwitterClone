@@ -13,18 +13,40 @@
 <% end %>
 
 
-<%= form_with model: @tweet, local: true do |form| %>
-  <p>
-    <%= form.label :username %>
-    <%= form.text_field :username %>
-  </p>
+<div class="container">
+  <div class="columns is-multiline">
+    <div class="column is-6 is-offset-3">
+      <div class="content is-size-3">
+        <h3><%= heading %></h3>
+      </div>
+    </div>
 
-  <p>
-    <%= form.label :body %>
-    <%= form.text_area :body %>
-  </p>
+    <div class="column is-6 is-offset-3">
+      <%= form_with model: tweet, local: true do |form| %>
+        <div class="field">
+          <%= form.label :username, class: "label" %>
+          <div class="control">
+            <%= form.text_field :username, class: "input", placeholder: "Your Username" %>
+          </div>
+        </div>
 
-  <p>
-    <%= form.submit submit %>
-  </p>
-<% end %>
+        <div class="field">
+          <%= form.label :body, class: "label" %>
+
+          <div class="control">
+            <%= form.text_area :body, class: "textarea", placeholder: 'Your body' %>
+          </div>
+        </div>
+
+        <div class="field is-grouped">
+          <div class="control">
+            <%= form.submit submit, class: "button is-link" %>
+          </div>
+          <div class="control">
+            <%= link_to "Cancel", cancel_path, class: 'button is-link is-light' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
