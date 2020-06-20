@@ -1,0 +1,26 @@
+<div class="container">
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item">
+        <img src=https://4.bp.blogspot.com/-nC_tc_Wyr-Y/XE8MG5-3sgI/AAAAAAAAHXk/vZqHAVKbBCcszmt4EnhJkNZlTy99LE4lgCK4BGAYYCw/s1600/Icon%2BTwitter%2BColor.png width="40" height="40" alt="Bulma">
+      </a>
+      <%= link_to 'Twitter', root_path, class: "navbar-item is-size-2"%>
+
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <%= link_to "New Tweet", new_tweet_path, class: "button is-info has-text-weight-bold" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
