@@ -8,7 +8,7 @@
 
     <% if tweet.errors.any? %>
       <div class="column is-6 is-offset-3">
-        <tweet class="message is-danger">
+        <article class="message is-danger">
           <div class="message-body">
             <p><%= pluralize(tweet.errors.count, "error") %> prohibited this tweet from being saved:</p>
             <br>
@@ -18,7 +18,7 @@
             <% end %>
             </p>
           </div>
-        </tweet>
+        </article>
       </div>
     <% end %>
 
