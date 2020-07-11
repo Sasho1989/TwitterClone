@@ -22,5 +22,9 @@ module SessionsHelper
     flash[type.to_sym] = message
     redirect_to root_path and return
   end
+
+  def equal_with_current_user?(other_user)
+    current_user == other_user
+  end
 end
 
