@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
     @comment = @tweet.comments.build(comment_params)
 
     if @comment.save
-      redirect_to tweet
+      redirect_to @tweet
     else
       render :new
     end
@@ -30,6 +30,13 @@ class CommentsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    comment = Comment.find(params[:id])
+    comment.destroy
+
+    redirect_to comment.tweet
   end
 
   private
